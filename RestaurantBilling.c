@@ -127,6 +127,7 @@ fgetc(stdin);
              break;
              
           }
+<<<<<<< HEAD
           case 2:
           system("cls");
           fp = fopen("RestaurantBill.dat","r");
@@ -142,6 +143,10 @@ fgetc(stdin);
           fclose(fp);
           break;
 
+=======
+          
+          
+>>>>>>> master
     }
 
 
