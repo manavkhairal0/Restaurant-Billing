@@ -59,15 +59,19 @@ void generateBillBody(char item[30], int qty, float price){
 
 int main(){
     
-    int opt, n, invoiceFound = 0;
+    int opt, n;
     float total;
     struct orders ord;
     struct orders order;
-    char saveBill ='y';
+    char saveBill ='y',contFlag = 'y';
     char name[50];
     FILE *fp;
 
     //dashboard
+    while(contFlag == 'y'){
+        system("cls");
+        float total = 0;
+        int invoiceFound = 0;
     printf("\t===============Priya ka dhaba===============");
     printf("\n\nPlease select your prefered operation: ");
     printf("\n\n");
@@ -172,8 +176,21 @@ fgetc(stdin);
           fclose(fp);
           break;
 
+          case 4:
+          printf("\n\t\tBye Bye :)\n\n");
+          exit(0);
+          break;
+          default:
+          printf("Sorry invalid option");
+          break;
+
 
     }
+    printf("\nDo you want to perform another Operation?[Y/N]:\t");
+    scanf("%s", &contFlag);
+    
+    }
+    printf("\n\t\tBye Bye :)\n\n");
 
 
     printf("\n\n");
