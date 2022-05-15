@@ -44,7 +44,7 @@ void generateBillBody(char item[30], int qty, float price){
         float netTotal = total -dis;
         float cgst = 0.09 * netTotal,grandTotal=netTotal + 2*cgst;
         printf("-----------------------------------------\n");
-        printf("Sub Total\t\t\t %.2f","%",dis);
+        printf("Sub Total\t\t\t %.2f",total);
         printf("\nDiscount @10%s\t\t\t%.2f","%",dis);
         printf("\n\t\t\t\t------");
         printf("\nNet Total\t\t\t%.2f", netTotal);
@@ -127,26 +127,22 @@ fgetc(stdin);
              break;
              
           }
-<<<<<<< HEAD
           case 2:
           system("cls");
           fp = fopen("RestaurantBill.dat","r");
           printf("\n  *****Your Previous Invoices*****\n");
           while(fread(&order,sizeof(struct orders),1,fp)){
+              float tot =0;
               generateBillHeader(order.customer,order.date);
               for(int i=0;i<order.numOfItems; i++){
                   generateBillBody(order.itm[i].item,order.itm[i].qty,order.itm[i].price);
-                  total+=order.itm[i].qty * order.itm[i].price;
+                  tot+=order.itm[i].qty * order.itm[i].price;
               }
-              generateBillFooter(total);
+              generateBillFooter(tot);
           }
           fclose(fp);
           break;
 
-=======
-          
-          
->>>>>>> master
     }
 
 
